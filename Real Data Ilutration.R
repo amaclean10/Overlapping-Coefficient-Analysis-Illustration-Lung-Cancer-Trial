@@ -1,23 +1,5 @@
 ## OVL: ------
 
-veteran <- veteran %>% 
-  filter(Survival_Days<800)
-
-veteran %>% 
-  filter(Treatment == "Test") %>% 
-  summarise(mean=mean(Survival_Days))
-
-veteran %>% 
-  filter(Treatment == "Standard") %>% 
-  dplyr::select(Survival_Days) -> standard
-
-veteran %>% 
-  filter(Treatment == "Test") %>% 
-  dplyr::select(Survival_Days) -> test
-
-standard$Survival_Days <- as.numeric(standard$Survival_Days)
-test$Survival_Days <- as.numeric(test$Survival_Days)
-
 set.seed(1)
 rows <- sample(69)
 
